@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -15,32 +15,24 @@ function Register() {
     });
     const data = await response.json();
     if (data.success) {
-        alert('signup successful')
-      navigate('/');
+      alert('signup successful')
+      navigate('/login');
     } else {
       alert('Registration failed');
     }
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <form onSubmit={handleRegister} className="bg-white p-8 rounded shadow-md w-80">
-        <h1 className="text-xl mb-4">Register</h1>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="mb-4 p-2 w-full border border-gray-300 rounded"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="mb-4 p-2 w-full border border-gray-300 rounded"
-        />
-        <button type="submit" className="bg-blue-500 text-white p-2 w-full rounded">Register</button>
+
+
+
+    <div className='flex justify-center p-14 bg-slate-200'>
+      <form className='flex flex-col items-center justify-center border p-6 bg-white'>
+        <h2 className='font-bold text-3xl my-3'>Register</h2>
+        <input type="text" placeholder='Your Email' className='w-[300px] p-2 outline-none border bg-transparent text-gray-600 my-1' onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" placeholder='Password' className='w-[300px] p-2 outline-none border bg-transparent text-gray-600 my-1' onChange={(e) => setPassword(e.target.value)} />
+        <button className='w-[300px] p-2 outline-none border bg-red-600 text-white font-bold mt-4 hover:bg-red-800' onClick={handleRegister}>Continue</button>
+        <div className='text-xs my-2'>Already  have an Account ? <Link to='/login' className='cursor-pointer text-blue-600'>Login</Link></div>
       </form>
     </div>
   );
