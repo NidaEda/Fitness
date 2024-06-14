@@ -1,9 +1,1 @@
-Project Title : Movies Webiste
-Tech Used :
-React js for front end
-Tailwind css for Styling 
-MySQL for database 
-PHP for Backend
-
------------------------------------------------------------12-06-2024
-Login page has implemented with React and tailwind Css
+This webiste is a Fitness Website that include PHP as a backend , react js as a Frontend and Tailwind CSS for the styling purpose and for the authentication and authorization we have implemented the SQL database and make a tables users in order to store and retrieve the data of all requirements.
